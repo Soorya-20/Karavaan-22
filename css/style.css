@@ -66,6 +66,18 @@ section img{
 	letter-spacing: 12px;
 	font-family: 'Orbitron';
 }
+#comingSoon{
+	position: relative;
+	color: white;
+	z-index: 2;
+	font-size: 1em;
+	text-align: center;
+	padding-top: 50px;
+	text-transform: uppercase;
+	letter-spacing: 12px;
+	font-family: 'Orbitron';
+	-webkit-text-stroke: 0.1vw white
+}
 .ab-text{
 	padding: 100px 20%;
 }
