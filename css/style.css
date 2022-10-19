@@ -164,7 +164,7 @@ section img{
 .vertical_box{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
 .horizontal_box{
     display: flex;
@@ -172,8 +172,9 @@ section img{
     justify-content: center;
 }
 .sponsor_item{
-    padding: 2%;
+    padding: 5%;
     min-width: 40vw;
+    max-width: 60vw;
     transform: translateY(150);
     opacity: 0;
     transition: 1s all ease;
@@ -210,7 +211,7 @@ TIMELINE STYLES
      transition: 0.4s;
      padding: 0 10px;
      box-sizing: border-box;
-     font-family: 'Oswald', sans-serif;
+     font-family: 'ProximaNovaBold';
      color: #fff;
 }
 
@@ -219,7 +220,7 @@ TIMELINE STYLES
      font-size: 15px;
      box-sizing: border-box;
      color: rgba(255, 255, 255, .7);
-     font-family: 'Roboto Condensed', sans-serif;
+     font-family: 'ProximaNova';
      font-weight: normal;
      line-height: 25px;
 }
