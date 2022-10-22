@@ -66,6 +66,53 @@
 			
 		})
 	</script>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media screen and (max-width: 500px) {
+  .column {
+    width: 90%;
+  }
+}
+</style>
+</head>
+<body>
+
+	<div class="ab-text">
+		<div class="heading">
+			<h2> Our Partners </h2>
+		</div>
+	</div>
+
+<div class="row">
+  <div class="column">
+    <img class=scaled src="img/P1.png" alt="Blog Outreach Partner" style="padding: 5%; min-width:0%; max-width: 60vw;">
+		<figcaption><center>Blog Outreach Partner</center></figcaption>
+  </div>
+  <div class="column">
+    <img src="img/P2.png" alt="News Media Partner" style="padding: 5%; max-width: 60vw;">
+		<figcaption><center>News Media Partner</center></figcaption>
+  </div>
+  <div class="bottom">
+	<p>© 2022 Karavaan</p>
+	</div>
+</div>
+
 </body>
 </html>
 
