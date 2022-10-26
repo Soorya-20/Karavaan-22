@@ -11,11 +11,42 @@
 	
 </head>
 <body>
+	
 	<section>
 		<img src="img/first.jpg" id="first">
 		<img src="img/last.png" id="last">
-		<h1 id="text">Karavaan</h1>
-		
+		<div class="object" id="textDiv">
+			<h1 id="text" class="object" data-value="3">Karavaan</h1>
+			<h3 class="object" data-value="3">2022</h3>
+		</div>
+		<img src="img/firstPage/1.png" class="object" data-value="-2" alt="">
+		<img src="img/firstPage/2.png" class="object" data-value="6" alt="">
+		<img src="img/firstPage/3.png" class="object" data-value="4" alt="">
+		<img src="img/firstPage/4.png" class="object" data-value="-6" alt="">
+		<img src="img/firstPage/1.png" class="object" data-value="-2" alt="">
+		<img src="img/firstPage/2.png" class="object" data-value="6" alt="">
+		<img src="img/firstPage/3.png" class="object" data-value="4" alt="">
+		<img src="img/firstPage/4.png" class="object" data-value="-6" alt="">
+		<img src="img/firstPage/5.png" class="object" data-value="8" alt="">
+		<img src="img/firstPage/6.png" class="object" data-value="-4" alt="">
+		<img src="img/firstPage/7.png" class="object" data-value="5" alt="">
+		<img src="img/firstPage/8.png" class="object" data-value="-9" alt="">
+		<img src="img/firstPage/9.png" class="object" data-value="-5" alt="">
+		<img src="img/firstPage/10.png" class="object" data-value="-5" alt="">
+		<img src="img/firstPage/11.png" class="object" data-value="-2" alt="">
+		<img src="img/firstPage/12.png" class="object" data-value="6" alt="">
+		<img src="img/firstPage/13.png" class="object" data-value="4" alt="">
+		<img src="img/firstPage/14.png" class="object" data-value="-6" alt="">
+		<img src="img/firstPage/15.png" class="object" data-value="8" alt="">
+		<img src="img/firstPage/16.png" class="object" data-value="-4" alt="">
+		<img src="img/firstPage/17.png" class="object" data-value="5" alt="">
+		<img src="img/firstPage/18.png" class="object" data-value="-9" alt="">
+		<img src="img/firstPage/19.png" class="object" data-value="-5" alt="">
+		<img src="img/firstPage/20.png" class="object" data-value="8" alt="">
+		<img src="img/firstPage/21.png" class="object" data-value="-2" alt="">
+		<img src="img/firstPage/22.png" class="object" data-value="6" alt="">
+		<img src="img/firstPage/23.png" class="object" data-value="4" alt="">
+		<img src="img/firstPage/24.png" class="object" data-value="-6" alt="">
 		
 	</section>
 	
@@ -87,7 +118,6 @@
   }
 }
 </style>
-</head>
 <body>
 
 	<div class="ab-text">
@@ -110,6 +140,21 @@
 	</div>
 </div>
 
+
 </body>
+
+<script type="text/javascript">
+document.addEventListener("mousemove", parallax);
+function parallax(e){
+  document.querySelectorAll(".object").forEach(function(move){
+
+	var moving_value = move.getAttribute("data-value");
+	var x = (e.clientX * moving_value) / 250;
+	var y = (e.clientY * moving_value) / 250;
+
+	move.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
+  });
+}
+</script>
 </html>
 
