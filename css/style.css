@@ -181,6 +181,7 @@ section img{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding: 2%;
 }
 .sponsor_item{
     padding: 5%;
