@@ -2,7 +2,7 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	font-family: 'Josefin Sans', sans-serif;
+	font-family: 'ProximaNova', sans-serif;
 }
 
 @font-face {
@@ -199,7 +199,7 @@ section img{
 
 
 /*
-TIMELINE STYLES
+####################################################3TIMELINE STYLES###############################################
 */
 
 .more {
@@ -223,14 +223,14 @@ TIMELINE STYLES
      padding: 0 10px;
      box-sizing: border-box;
      font-family: 'ProximaNovaBold';
-     color: #fff;
+     color: black;
 }
 
 .timeline__content-desc {
      margin: 0;
      font-size: 15px;
      box-sizing: border-box;
-     color: rgba(255, 255, 255, .7);
+     color: black;
      font-family: 'ProximaNova';
      font-weight: normal;
      line-height: 25px;
@@ -269,10 +269,10 @@ TIMELINE STYLES
      letter-spacing: 3px;
      width: 100%;
      position: absolute;
-     color: rgba(255, 255, 255, .5);
+     color: black;
      font-size: 13px;
      font-family: 'Pathway Gothic One', sans-serif;
-     border-left: 10px solid rgba(255, 255, 255, .5);
+     border-left: 10px solid black;
      top: 70%;
      margin-top: -5px;
      padding-left: 15px;
@@ -290,7 +290,7 @@ TIMELINE STYLES
      left: calc(-100% - 56px);
      padding-left: 0;
      border-left: none;
-     border-right: 2px solid rgba(255, 255, 255, .5);
+     border-right: 2px solid black;
      padding-right: 15px;
 }
 
@@ -363,7 +363,7 @@ TIMELINE STYLES
 }
 
 .timeline-header__title {
-     color: #fff;
+     color: black;
      font-size: 58px;
     font-family: 'ProximaNova';
      font-weight: normal;
@@ -371,7 +371,7 @@ TIMELINE STYLES
 }
 
 .timeline-header__subtitle {
-     color: rgba(255, 255, 255, .5);
+     color: black;
     font-family: 'ProximaNova';
      font-size: 16px;
      letter-spacing: 5px;
@@ -385,7 +385,7 @@ TIMELINE STYLES
 }
 
 .demo-footer a {
-     color: #999;
+     color: black;
      display: inline-block;
     font-family: 'ProximaNova';
 }
@@ -400,7 +400,7 @@ TIMELINE STYLES
 	border-radius: 0px;
 	font-size: 135px;
 	font-weight: bold;
-	color: white;
+	color: black;
 	letter-spacing: 2px;
 	margin:auto;
 }
@@ -440,7 +440,7 @@ TIMELINE STYLES
   z-index: 1;
   padding:18px;
   position: relative;
-  color: #fff;
+  color: black;
   font-size: 90px;
   text-transform: uppercase;
   font-weight: 900;
@@ -452,7 +452,7 @@ TIMELINE STYLES
   z-index: 2;
   padding-top:20px;
   position: relative;
-  color: #fff;
+  color: black;
   font-size: 48px;
   font-weight: 500;
   letter-spacing: 100px;
@@ -470,4 +470,41 @@ TIMELINE STYLES
   .object h2 span{
     font-size: 26px;
   }
+}
+
+
+/* ################################# SPONSORS #################################################################*/
+/* .content end */
+
+
+/* Sponsor Bar */
+/* Footer bar */
+.footer {
+    width: 100vw;
+    background-color: white;
+    border-top: solid 10px white;
+    display: block;
+}
+
+
+.teamlogo {
+    padding-right: 2vw;
+    border-right: solid 2px #000
+}
+
+.footer-links {
+    transition: transform.3s !important;
+}
+
+.footer-links:hover {
+    transform: scale(1.1);
+    background-color: none;
+}
+
+.footer-links-socials {
+    transition: transform.6s;
+}
+
+.footer-links-socials:hover {
+    transform: scale(2);
 }
