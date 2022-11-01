@@ -244,7 +244,7 @@ section img{
      height: 100%;
      margin-left: -1px;
      content: "";
-     background: rgba(255, 255, 255, .07);
+     background: black;
 }
 
 @media only screen and (max-width: 767px) {
