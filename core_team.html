@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<style>
+    #grad {
+        background-color: white;
+        font: black;
+    }
+</style>
+<style>
+    @keyframes fade-in{
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+    }
+
+    @-webkit-keyframes fade-in{
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+
+
+    .animated-fade-in{
+        background-color: white;
+        animation: fade-in 2s linear;
+        -webkit-animation: fade-in 2s linear;
+        animation-fill-mode: forwards;
+    }
+
+    .animated-fade-in-out {
+        background-color: white;
+        opacity: 1;
+        text-align: center;
+    }
+
+
+    @keyframes left-right{
+        0% {margin-left: -200vw;}
+        100%{margin-left: 0vw;}
+    }
+
+    @-webkit-keyframes left-right {
+        0% {margin-left: -200vw;}
+        100%{margin-left: 0vw;}
+    }
+    .animated-left-to-right {
+        background-color: white;
+        animation: left-right 3s;
+        -webkit-animation: left-right 3s;
+        animation-fill-mode: forwards;
+    }
+
+    .container {
+        background-color: white;
+        width: 100vw;
+        font-size: 5vmin;
+        font-family: ProximaNova !important; 
+    }
+
+    .main {
+        display: flex;
+        flex-direction: row;
+        justify-content: center space-around;
+        text-align: center;
+    }
+
+    .center {
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center;
+        text-align: center;
+    }
+
+    .right {
+        display: flex;
+        align-items: right;
+        text-align: right;
+        justify-content: right;
+    }
+
+    .left {
+        display: flex;
+        align-items: left;
+    }
+
+
+    a:link{
+        text-decoration: none;
+    }
+
+    @keyframes counter1 {
+        0% {
+        counter-increment: count 0;
+        }
+        25% {
+        counter-increment: count 1;
+        }
+        50% {
+        counter-increment: count 2;
+        }
+        75% {
+        counter-increment: count 3;
+        }
+        100% {
+        counter-increment: count 4;
+        }
+        
+    }
+
+    @keyframes counter2 {
+        0% {
+        counter-increment: count 0;
+        }
+        10% {
+        counter-increment: count 2;
+        }
+        20% {
+        counter-increment: count 5;
+        }
+        30% {
+        counter-increment: count 7;
+        }
+        40% {
+        counter-increment: count 10;
+        }
+        50% {
+        counter-increment: count 12;
+        }
+        60% {
+        counter-increment: count 15;
+        }
+        70% {
+        counter-increment: count 17;
+        }
+        80% {
+        counter-increment: count 20;
+        }
+        90% {
+        counter-increment: count 22;
+        }
+        100% {
+        counter-increment: count 25;
+        }
+    }
+    .counting::after {
+        content: counter(count);
+        animation: counter2 2.5s linear;
+        animation-fill-mode: forwards;
+    }
+    .counting::after{
+        content: counter(count);
+        animation: counter1 2.5s linear;
+        animation-fill-mode: forwards;
+    }
+</style>
+
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Orbitron&display=swap"
+            rel="stylesheet">
+        <script src="script.js"></script>
+        <title>
+            Core Team
+        </title>
+    </head>
+
+    <body id="grad">
+
+        <div class="topnav" id="myTopnav">
+            <a href="index.html" class="active">Home</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="core_team.html">Core Team</a>
+            <div class="dropdown">
+                <button class="dropbtn">History
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Karavaan 2017</a>
+                    <a href="#">Karavaan 2018</a>
+                    <a href="#">Karavaan 2019</a>
+                </div>
+            </div>
+            <a href="previous_sponsors.html">Previous Sponsors</a>
+            <a href="#about">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+
+        <!--
+        <div class="contianer">
+            <div class="center">
+                 First text
+                <div class="animated-fade-in-out" style="width: 70vw;">
+                    <p>We are a team of 44 undergrads from IISER Pune</p>
+                </div>
+
+                <br><br><br><br>
+                Second text 
+                <div class="animated-fade-in-out" style="width: 70vw;">
+                    <p><span id="counter1" style="font-size: 180%; font-style: normal; color: black;"></span> <em
+                            style="font-size: 180%; font-style: normal; color: black;">%</em>
+                    </p>
+                </div>
+                
+                <br><br><br><br>
+                Second text 
+                <div class="animated-fade-in-out" style="width: 70vw;">
+                    <p><span id="counter2" style="font-size: 180%; font-style: normal; color: black;"></span> <em
+                            style="font-size: 180%; font-style: normal; color: black;">%</em>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        -->
+
+        <h1 style="text-align: center; margin-top: 45vh;">WORK IN PROGRESS...</h1>
+        <script>
+            $(document).ready(function () {
+                $(window).on("load", function () {
+                    $(window).scroll(function () {
+                        var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+                        var windowTop = $(this).scrollTop() + $('.menu').height() - 150;
+
+                        $(".animated-fade-in-out").each(function () {
+                                /* Check the location of each desired element */
+                            var objectBottom = $(this).offset().top + $(this).outerHeight();
+                            var objectTop = $(this).offset().top;
+
+                                /* If the element is completely within bounds of the window, fade it in */
+                            if (objectBottom < windowBottom && objectTop > windowTop) {
+                                //object comes into view (scrolling down)
+                                if ($(this).css("opacity") == 0) {
+                                    $(this).fadeTo(500, 1);
+                                }
+                            }
+                            else { //object goes out of view (scrolling up)
+                                if ($(this).css("opacity") == 1) {
+                                    $(this).fadeTo(500, 0);
+                                }
+                            }
+                        });
+
+
+
+                        $("#slideText").each(function () {
+                            /*Check location of each desired element */
+                            var objectBottom_sp = $(this).offset().top + $(this).outerHeight();
+                            if (objectBottom_sp < windowBottom) {
+                                //object comes into view (scrolling down)
+                                $(this).addClass("animated-left-to-right");
+                            }
+                        });
+
+
+                        $("#conveyor").each(function () {
+                            var objectBottom_sp2 = $(this).offset().top + $(this).outerHeight() - 700;
+                            if (objectBottom_sp2 < windowBottom) {
+                                //object comes into view (scrolling down)
+                                $(this).addClass("animated-fade-in");
+                            }
+                        });
+
+                        $("#counter").each(function () {
+                            /*Check location of the element*/
+                            var objectBottom_sp3 = $(this).offset().top + $(this).outerHeight();
+                            console.log(this)
+                            if (objectBottom_sp3 < windowBottom) {
+                                $(this).addClass("counting");
+                            }
+                        });
+
+
+                    }).scroll(); //invoke scroll-handler on page-load
+                })
+            });
+        </script>
+    </body>
+</html>
