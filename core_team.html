@@ -1,155 +1,73 @@
 <!DOCTYPE html>
 <style>
-    #grad {
-        background-color: white;
-        font: black;
+    #grad{
+        background:
+            linear-gradient(135deg, #ffeacb 21px, #602080 22px, #602080 24px, transparent 24px, transparent 67px, #602080 67px, #602080 69px, transparent 69px),
+            linear-gradient(225deg, #ffeacb 21px, #602080 22px, #602080 24px, transparent 24px, transparent 67px, #602080 67px, #602080 69px, transparent 69px);
+        background-image: linear-gradient(#ffeacb, #602080);
+        font: black;}
+    hr {
+        height: 0.5vh; 
+        background-color: black; 
+        border-color: black; 
+        width: 95%; 
+        align-self: center;
     }
-</style>
-<style>
-    @keyframes fade-in{
-	0% {opacity: 0;}
-	100% {opacity: 1;}
+    /* Sidenav Start */
+    .sidenav {
+        height: 75vh; 
+        width: 15vw; 
+        margin-right: 10vw;
+        padding-left: 7vw; 
+        position: sticky; 
+        position: -webkit-sticky; 
+        top: 15vh; 
+        font-family: 'ProximaNova'; 
     }
-
-    @-webkit-keyframes fade-in{
-        0% {opacity: 0;}
-        100% {opacity: 1;}
+    .sidenav-content {
+        list-style-type: none;
+        padding: 0;
+        height: inherit;
+        width: inherit;
+        position: inherit;
+        list-style-position: inside;
     }
-
-
-    .animated-fade-in{
-        background-color: white;
-        animation: fade-in 2s linear;
-        -webkit-animation: fade-in 2s linear;
-        animation-fill-mode: forwards;
-    }
-
-    .animated-fade-in-out {
-        background-color: white;
-        opacity: 1;
-        text-align: center;
-    }
-
-
-    @keyframes left-right{
-        0% {margin-left: -200vw;}
-        100%{margin-left: 0vw;}
-    }
-
-    @-webkit-keyframes left-right {
-        0% {margin-left: -200vw;}
-        100%{margin-left: 0vw;}
-    }
-    .animated-left-to-right {
-        background-color: white;
-        animation: left-right 3s;
-        -webkit-animation: left-right 3s;
-        animation-fill-mode: forwards;
-    }
-
-    .container {
-        background-color: white;
-        width: 100vw;
-        font-size: 5vmin;
-        font-family: ProximaNova !important; 
-    }
-
-    .main {
-        display: flex;
-        flex-direction: row;
-        justify-content: center space-around;
-        text-align: center;
-    }
-
-    .center {
-        display: flex; 
-        flex-direction: column; 
-        justify-content: center; 
-        align-items: center;
-        text-align: center;
-    }
-
-    .right {
-        display: flex;
-        align-items: right;
-        text-align: right;
-        justify-content: right;
-    }
-
-    .left {
-        display: flex;
-        align-items: left;
-    }
-
-
-    a:link{
+    
+    .sidenav a {
+        text-align: left;
+        color: black;
+        font-size: 3vmin!important;
+        /* font-family: 'Titillium Web'!important; */
+        font-style: normal !important;
+        font-weight: 600 !important;
         text-decoration: none;
+        }
+    
+    .sidenav a:hover {
+        color: #7F462C;
+        transition: 0.5s all;
+        }
+    .sidenav-active{
+        color: white !important; 
+        border-radius: 20px!important;
+        transition: 0.25s all;
+    } 
+    @media (max-width: 900px) {
+        .sidenav {
+            display: none;
+            }
+        }
+     @media (max-height: 500px) {
+        .sidenav {
+            display: none;
+            }
+        }
+    
+    .nav-item{
+        padding-bottom: 0.5vh;
     }
 
-    @keyframes counter1 {
-        0% {
-        counter-increment: count 0;
-        }
-        25% {
-        counter-increment: count 1;
-        }
-        50% {
-        counter-increment: count 2;
-        }
-        75% {
-        counter-increment: count 3;
-        }
-        100% {
-        counter-increment: count 4;
-        }
-        
-    }
-
-    @keyframes counter2 {
-        0% {
-        counter-increment: count 0;
-        }
-        10% {
-        counter-increment: count 2;
-        }
-        20% {
-        counter-increment: count 5;
-        }
-        30% {
-        counter-increment: count 7;
-        }
-        40% {
-        counter-increment: count 10;
-        }
-        50% {
-        counter-increment: count 12;
-        }
-        60% {
-        counter-increment: count 15;
-        }
-        70% {
-        counter-increment: count 17;
-        }
-        80% {
-        counter-increment: count 20;
-        }
-        90% {
-        counter-increment: count 22;
-        }
-        100% {
-        counter-increment: count 25;
-        }
-    }
-    .counting::after {
-        content: counter(count);
-        animation: counter2 2.5s linear;
-        animation-fill-mode: forwards;
-    }
-    .counting::after{
-        content: counter(count);
-        animation: counter1 2.5s linear;
-        animation-fill-mode: forwards;
-    }
+/* Sidenav End */
 </style>
 
 <html>
@@ -163,6 +81,7 @@
             href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Orbitron&display=swap"
             rel="stylesheet">
         <script src="script.js"></script>
+        <script src="jquery-3.6.1.min.js"></script>
         <title>
             Core Team
         </title>
@@ -189,94 +108,718 @@
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
         </div>
 
-        <!--
-        <div class="contianer">
-            <div class="center">
-                 First text
-                <div class="animated-fade-in-out" style="width: 70vw;">
-                    <p>We are a team of 44 undergrads from IISER Pune</p>
+        <h1 style="text-align: center; margin-top: 30vh; font-size: 5vw;">Core Team</h1>
+        <br><br><br><br>
+        <div style="display: flex; flex-direction: row; justify-content: center;">
+            <div class="sidenav">
+                <ul class="sidenav-content" id="sidenav-id" style="list-style-type: none;">
+                    <li class="nav-item"><a class="nav-link" href="#1">Mainstage</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#2">Technicals</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#3">Sponsorship</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#4">Publicity</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#5">Social Initiatives</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#6">Science Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#7">Showcase</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#8">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#9">Design</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#10">Decorations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#11">Merchandise and Printing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#12">Media</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#13">Website</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#14">Food</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#15">Secuirty, Scheduling <br>& Logistics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#16">Hospitality and Transport</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#17">Pre-Karavaan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#18">Accounts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#19">Content Writing</a></li>
+                </ul>
+            </div>
+            <div class="vertical_box">
+                <h1 id="1" style="font-family: 'LemonMilk'; padding-left: 3%;">Mainstage</h1>
+                <hr>
+                <div class="horizontal_box">
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Naren</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam
+                            unde accusamus id?</p>
+                    </div>
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Sushant</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam
+                            unde accusamus id?</p>
+                    </div>
                 </div>
-
-                <br><br><br><br>
-                Second text 
-                <div class="animated-fade-in-out" style="width: 70vw;">
-                    <p><span id="counter1" style="font-size: 180%; font-style: normal; color: black;"></span> <em
-                            style="font-size: 180%; font-style: normal; color: black;">%</em>
-                    </p>
+                <br><br><br>
+            
+            
+                <h1 id="2" style="font-family: 'LemonMilk'; padding-left: 3%;">Technicals</h1>
+                <hr>
+                <div class="horizontal_box">
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Manav</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
                 </div>
-                
-                <br><br><br><br>
-                Second text 
-                <div class="animated-fade-in-out" style="width: 70vw;">
-                    <p><span id="counter2" style="font-size: 180%; font-style: normal; color: black;"></span> <em
-                            style="font-size: 180%; font-style: normal; color: black;">%</em>
-                    </p>
+                <br><br><br>
+            
+            
+                <h1 id="3" style="font-family: 'LemonMilk'; padding-left: 3%;">Sponsorship</h1>
+                <hr>
+                <div class="horizontal_box">
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Vatsal</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Varad</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
                 </div>
-
+                <br><br><br>
+            
+            
+                <h1 id="4" style="font-family: 'LemonMilk'; padding-left: 3%;">Publicity</h1>
+                <hr>
+                <div class="horizontal_box">
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Avantika Prasad</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Jai</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                </div>
+                <br><br><br>
+            
+            
+                <h1 id="5" style="font-family: 'LemonMilk'; padding-left: 3%;">Social Initiatives</h1>
+                <hr>
+                <div class="horizontal_box">
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Vidisha</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Emily</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Sakshi</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Vedant</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                </div>
+                <br><br><br>
+            
+            
+                <h1 id="6" style="font-family: 'LemonMilk'; padding-left: 3%;">Science Events</h1>
+                <hr>
+                <div class="horizontal_box">
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Padmapriya</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Siddharth</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                </div>
+                <br><br><br>
+            
+            
+                <h1 id="7" style="font-family: 'LemonMilk'; padding-left: 3%;">Showcase</h1>
+                <hr>
+                <div class="horizontal_box">
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Ritvee</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Anirban</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                </div>
+                <br><br><br>
+            
+            
+                <h1 id="8" style="font-family: 'LemonMilk'; padding-left: 3%;">Events</h1>
+                <hr>
+                <div class="horizontal_box">
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Apoorva</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Sanchi</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Manasvi</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                </div>
+                <br><br><br>
+            
+            
+                <h1 id="9" style="font-family: 'LemonMilk'; padding-left: 3%;">Design</h1>
+                <hr>
+                <div class="horizontal_box">
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Krishna</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Yuvraj</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Yatish</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                </div>
+                <br><br><br>
+            
+            
+                <h1 id="10" style="font-family: 'LemonMilk'; padding-left: 3%;">Decorations</h1>
+                <hr>
+                <div class="horizontal_box">
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Salima</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Arkadeep</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                </div>
+                <br><br><br>
+            
+            
+                <h1 id="11" style="font-family: 'LemonMilk'; padding-left: 3%;">Merchandise and Printing</h1>
+                <hr>
+                <div class="horizontal_box">
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Deepjith Debnath</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                </div>
+                <br><br><br>
+            
+            
+                <h1 id="12" style="font-family: 'LemonMilk'; padding-left: 3%;">Media</h1>
+                <hr>
+                <div class="horizontal_box">
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Adhiraj</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                </div>
+                <br><br><br>
+            
+            
+                <h1 id="13" style="font-family: 'LemonMilk'; padding-left: 3%;">Website</h1>
+                <hr>
+                <div class="horizontal_box">
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Pritam</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Soorya</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Siddharth</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                </div>
+                <br><br><br>
+            
+            
+                <h1 id="14" style="font-family: 'LemonMilk'; padding-left: 3%;">Food</h1>
+                <hr>
+                <div class="horizontal_box">
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Mayur Joshi</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Utkarsh</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                </div>
+                <br><br><br>
+            
+            
+                <h1 id="15" style="font-family: 'LemonMilk'; padding-left: 3%;">Secuirty, Scheduling & Logistics</h1>
+                <hr>
+                <div class="horizontal_box">
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Prateek</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Aditi</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Darsan</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                </div>
+                <br><br><br>
+            
+            
+                <h1 id="16" style="font-family: 'LemonMilk'; padding-left: 3%;">Hospitality & Transport</h1>
+                <hr>
+                <div class="horizontal_box">
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Maria Sabu</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Shreya Mehra</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                </div>
+                <br><br><br>
+            
+            
+                <h1 id="17" style="font-family: 'LemonMilk'; padding-left: 3%;">Pre-Karavaan</h1>
+                <hr>
+                <div class="horizontal_box">
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Prerna</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Bhavik</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                </div>
+                <br><br><br>
+            
+            
+                <h1 id="18" style="font-family: 'LemonMilk'; padding-left: 3%;">Accounts</h1>
+                <hr>
+                <div class="horizontal_box">
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Atharva Bhide</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                </div>
+                <br><br><br>
+            
+            
+                <h1 id="19" style="font-family: 'LemonMilk'; padding-left: 3%;">Content Writing</h1>
+                <hr>
+                <div class="horizontal_box">
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Punya Sethi</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                        <h2 style="text-align: center;">Ann</h2><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                            rem
+                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                            accusamus id?</p>
+                    </div>
+                </div>
+                <br><br><br>
             </div>
         </div>
-        -->
-
-        <h1 style="text-align: center; margin-top: 45vh;">WORK IN PROGRESS...</h1>
-        <script>
-            $(document).ready(function () {
-                $(window).on("load", function () {
-                    $(window).scroll(function () {
-                        var windowBottom = $(this).scrollTop() + $(this).innerHeight();
-                        var windowTop = $(this).scrollTop() + $('.menu').height() - 150;
-
-                        $(".animated-fade-in-out").each(function () {
-                                /* Check the location of each desired element */
-                            var objectBottom = $(this).offset().top + $(this).outerHeight();
-                            var objectTop = $(this).offset().top;
-
-                                /* If the element is completely within bounds of the window, fade it in */
-                            if (objectBottom < windowBottom && objectTop > windowTop) {
-                                //object comes into view (scrolling down)
-                                if ($(this).css("opacity") == 0) {
-                                    $(this).fadeTo(500, 1);
-                                }
-                            }
-                            else { //object goes out of view (scrolling up)
-                                if ($(this).css("opacity") == 1) {
-                                    $(this).fadeTo(500, 0);
-                                }
-                            }
-                        });
-
-
-
-                        $("#slideText").each(function () {
-                            /*Check location of each desired element */
-                            var objectBottom_sp = $(this).offset().top + $(this).outerHeight();
-                            if (objectBottom_sp < windowBottom) {
-                                //object comes into view (scrolling down)
-                                $(this).addClass("animated-left-to-right");
-                            }
-                        });
-
-
-                        $("#conveyor").each(function () {
-                            var objectBottom_sp2 = $(this).offset().top + $(this).outerHeight() - 700;
-                            if (objectBottom_sp2 < windowBottom) {
-                                //object comes into view (scrolling down)
-                                $(this).addClass("animated-fade-in");
-                            }
-                        });
-
-                        $("#counter").each(function () {
-                            /*Check location of the element*/
-                            var objectBottom_sp3 = $(this).offset().top + $(this).outerHeight();
-                            console.log(this)
-                            if (objectBottom_sp3 < windowBottom) {
-                                $(this).addClass("counting");
-                            }
-                        });
-
-
-                    }).scroll(); //invoke scroll-handler on page-load
-                })
-            });
-        </script>
     </body>
+
+    <script>
+
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                var scroll_top = $(window).scrollTop();
+                var div_one_top = $("#1").offset().top-200;
+                var div_two_top = $("#2").offset().top-200;
+                var div_three_top = $("#3").offset().top-200;
+                var div_four_top = $("#4").offset().top-200;
+                var div_five_top = $("#5").offset().top-200;
+                var div_six_top = $("#6").offset().top-200;
+                var div_seven_top = $("#7").offset().top-200;
+                var div_eight_top = $("#8").offset().top-200;
+                var div_nine_top = $("#9").offset().top-200;
+                var div_ten_top = $("#10").offset().top-200;
+                var div_eleven_top = $("#11").offset().top-200;
+                var div_twelve_top = $("#12").offset().top-200;
+                var div_thirteen_top = $("#13").offset().top-200;
+                var div_fourteen_top = $("#14").offset().top-200;
+                var div_fifteen_top = $("#15").offset().top-200;
+                var div_sixteen_top = $("#16").offset().top-200;
+                var div_seventeen_top = $("#17").offset().top-200;
+                var div_eighteen_top = $("#18").offset().top-200;
+                var div_nineteen_top = $("#19").offset().top-200;
+
+                if (scroll_top > div_one_top && scroll_top < div_two_top) {
+                    //Division 1
+                    if (!$('a[href="#1"]').hasClass('sidenav-active')) {
+                        $('a[href="#1"]').addClass('sidenav-active');
+                    }
+
+                    if ($('a[href="#2"]').hasClass('sidenav-active')) {
+                        $('a[href="#2"]').removeClass('sidenav-active');
+                    }
+
+                } else if (scroll_top > div_two_top && scroll_top < div_three_top) {
+                    // Division 2
+                    if ($('a[href="#1"]').hasClass('sidenav-active')) {
+                        $('a[href="#1"]').removeClass('sidenav-active');
+                    }
+
+                    if ($('a[href="#3"]').hasClass('sidenav-active')) {
+                        $('a[href="#3"]').removeClass('sidenav-active');
+                    }
+
+                    if (!$('a[href="#2"]').hasClass('sidenav-active')) {
+                        $('a[href="#2"]').addClass('sidenav-active');
+                    }
+                } else if (scroll_top > div_three_top && scroll_top < div_four_top) {
+                    //Division 3
+                    if ($('a[href="#2"]').hasClass('sidenav-active')) {
+                        $('a[href="#2"]').removeClass('sidenav-active');
+                    }
+
+                    if ($('a[href="#4"]').hasClass('sidenav-active')) {
+                        $('a[href="#4"]').removeClass('sidenav-active');
+                    }
+
+                    if (!$('a[href="#3"]').hasClass('sidenav-active')) {
+                        $('a[href="#3"]').addClass('sidenav-active');
+                    }
+                } else if (scroll_top > div_four_top && scroll_top < div_five_top) {
+                    // You are in div 4
+                    if ($('a[href="#3"]').hasClass('sidenav-active')) {
+                        $('a[href="#3"]').removeClass('sidenav-active');
+                    }
+
+                    if ($('a[href="#5"]').hasClass('sidenav-active')) {
+                        $('a[href="#5"]').removeClass('sidenav-active');
+                    }
+
+                    if (!$('a[href="#4"]').hasClass('sidenav-active')) {
+                        $('a[href="#4"]').addClass('sidenav-active');
+                    }
+                } else if (scroll_top > div_five_top && scroll_top < div_six_top) {
+                    // You are in div 5
+                    if ($('a[href="#4"]').hasClass('sidenav-active')) {
+                        $('a[href="#4"]').removeClass('sidenav-active');
+                    }
+
+                    if ($('a[href="#6"]').hasClass('sidenav-active')) {
+                        $('a[href="#6"]').removeClass('sidenav-active');
+                    }
+
+                    if (!$('a[href="#5"]').hasClass('sidenav-active')) {
+                        $('a[href="#5"]').addClass('sidenav-active');
+                    }
+                } else if (scroll_top > div_six_top && scroll_top < div_seven_top) {
+                    // You are in div 6
+                    if ($('a[href="#5"]').hasClass('sidenav-active')) {
+                        $('a[href="#5"]').removeClass('sidenav-active');
+                    }
+
+                    if ($('a[href="#7"]').hasClass('sidenav-active')) {
+                        $('a[href="#7"]').removeClass('sidenav-active');
+                    }
+
+                    if (!$('a[href="#6"]').hasClass('sidenav-active')) {
+                        $('a[href="#6"]').addClass('sidenav-active');
+                    }
+                } else if (scroll_top > div_seven_top && scroll_top < div_eight_top) {
+                    // You are in div 7
+                    if ($('a[href="#6"]').hasClass('sidenav-active')) {
+                        $('a[href="#6"]').removeClass('sidenav-active');
+                    }
+
+                    if (!$('a[href="#7"]').hasClass('sidenav-active')) {
+                        $('a[href="#7"]').addClass('sidenav-active');
+                    }
+
+                    if ($('a[href="#8"]').hasClass('sidenav-active')) {
+                        $('a[href="#8"]').removeClass('sidenav-active');
+                    }
+
+                } else if (scroll_top > div_eight_top && scroll_top < div_nine_top) {
+                    // You are in div 8
+                    if ($('a[href="#7"]').hasClass('sidenav-active')) {
+                        $('a[href="#7"]').removeClass('sidenav-active');
+                    }
+
+                    if (!$('a[href="#8"]').hasClass('sidenav-active')) {
+                        $('a[href="#8"]').addClass('sidenav-active');
+                    }
+                    if ($('a[href="#9"]').hasClass('sidenav-active')) {
+                        $('a[href="#9"]').removeClass('sidenav-active');
+                    }
+
+                } else if (scroll_top > div_nine_top && scroll_top < div_ten_top) {
+                    // You are in div 9
+                    if ($('a[href="#8"]').hasClass('sidenav-active')) {
+                        $('a[href="#8"]').removeClass('sidenav-active');
+                    }
+
+                    if (!$('a[href="#9"]').hasClass('sidenav-active')) {
+                        $('a[href="#9"]').addClass('sidenav-active');
+                    }
+                    if ($('a[href="#10"]').hasClass('sidenav-active')) {
+                        $('a[href="#10"]').removeClass('sidenav-active');
+                    }
+
+                } else if (scroll_top > div_ten_top && scroll_top < div_eleven_top) {
+                    // You are in div 10
+                    if ($('a[href="#9"]').hasClass('sidenav-active')) {
+                        $('a[href="#9"]').removeClass('sidenav-active');
+                    }
+
+                    if (!$('a[href="#10"]').hasClass('sidenav-active')) {
+                        $('a[href="#10"]').addClass('sidenav-active');
+                    }
+                    if ($('a[href="#11"]').hasClass('sidenav-active')) {
+                        $('a[href="#11"]').removeClass('sidenav-active');
+                    }
+
+                } else if (scroll_top > div_eleven_top && scroll_top < div_twelve_top) {
+                    // You are in div 11
+                    if ($('a[href="#10"]').hasClass('sidenav-active')) {
+                        $('a[href="#10"]').removeClass('sidenav-active');
+                    }
+
+                    if (!$('a[href="#11"]').hasClass('sidenav-active')) {
+                        $('a[href="#11"]').addClass('sidenav-active');
+                    }
+                    if ($('a[href="#12"]').hasClass('sidenav-active')) {
+                        $('a[href="#12"]').removeClass('sidenav-active');
+                    }
+
+                } else if (scroll_top > div_twelve_top && scroll_top < div_thirteen_top) {
+                    // You are in div 12
+                    if ($('a[href="#11"]').hasClass('sidenav-active')) {
+                        $('a[href="#11"]').removeClass('sidenav-active');
+                    }
+
+                    if (!$('a[href="#12"]').hasClass('sidenav-active')) {
+                        $('a[href="#12"]').addClass('sidenav-active');
+                    }
+                    if ($('a[href="#13"]').hasClass('sidenav-active')) {
+                        $('a[href="#13"]').removeClass('sidenav-active');
+                    }
+
+                } else if (scroll_top > div_thirteen_top && scroll_top < div_fourteen_top) {
+                    // You are in div 13
+                    if ($('a[href="#12"]').hasClass('sidenav-active')) {
+                        $('a[href="#12"]').removeClass('sidenav-active');
+                    }
+
+                    if (!$('a[href="#13"]').hasClass('sidenav-active')) {
+                        $('a[href="#13"]').addClass('sidenav-active');
+                    }
+                    if ($('a[href="#14"]').hasClass('sidenav-active')) {
+                        $('a[href="#14"]').removeClass('sidenav-active');
+                    }
+
+                } else if (scroll_top > div_fourteen_top && scroll_top < div_fifteen_top) {
+                    // You are in div 14
+                    if ($('a[href="#13"]').hasClass('sidenav-active')) {
+                        $('a[href="#13"]').removeClass('sidenav-active');
+                    }
+
+                    if (!$('a[href="#14"]').hasClass('sidenav-active')) {
+                        $('a[href="#14"]').addClass('sidenav-active');
+                    }
+                    if ($('a[href="#15"]').hasClass('sidenav-active')) {
+                        $('a[href="#15"]').removeClass('sidenav-active');
+                    }
+
+                } else if (scroll_top > div_fifteen_top && scroll_top < div_sixteen_top) {
+                    // You are in div 15
+                    if ($('a[href="#14"]').hasClass('sidenav-active')) {
+                        $('a[href="#14"]').removeClass('sidenav-active');
+                    }
+
+                    if (!$('a[href="#15"]').hasClass('sidenav-active')) {
+                        $('a[href="#15"]').addClass('sidenav-active');
+                    }
+                    if ($('a[href="#16"]').hasClass('sidenav-active')) {
+                        $('a[href="#16"]').removeClass('sidenav-active');
+                    }
+
+                } else if (scroll_top > div_sixteen_top && scroll_top < div_seventeen_top) {
+                    // You are in div 16
+                    if ($('a[href="#15"]').hasClass('sidenav-active')) {
+                        $('a[href="#15"]').removeClass('sidenav-active');
+                    }
+
+                    if (!$('a[href="#16"]').hasClass('sidenav-active')) {
+                        $('a[href="#16"]').addClass('sidenav-active');
+                    }
+                    if ($('a[href="#17"]').hasClass('sidenav-active')) {
+                        $('a[href="#17"]').removeClass('sidenav-active');
+                    }
+
+                } else if (scroll_top > div_seventeen_top && scroll_top < div_eighteen_top) {
+                    // You are in div 17
+                    if ($('a[href="#16"]').hasClass('sidenav-active')) {
+                        $('a[href="#16"]').removeClass('sidenav-active');
+                    }
+
+                    if (!$('a[href="#17"]').hasClass('sidenav-active')) {
+                        $('a[href="#17"]').addClass('sidenav-active');
+                    }
+                    if ($('a[href="#18"]').hasClass('sidenav-active')) {
+                        $('a[href="#18"]').removeClass('sidenav-active');
+                    }
+
+                } else if (scroll_top > div_eighteen_top && scroll_top < div_nineteen_top) {
+                    // You are in div 18
+                    if ($('a[href="#17"]').hasClass('sidenav-active')) {
+                        $('a[href="#17"]').removeClass('sidenav-active');
+                    }
+
+                    if (!$('a[href="#18"]').hasClass('sidenav-active')) {
+                        $('a[href="#18"]').addClass('sidenav-active');
+                    }
+                    if ($('a[href="#19"]').hasClass('sidenav-active')) {
+                        $('a[href="#19"]').removeClass('sidenav-active');
+                    }
+
+                } else if (scroll_top > div_nineteen_top) {
+                    // You are in div 19
+                    if ($('a[href="#18"]').hasClass('sidenav-active')) {
+                        $('a[href="#18"]').removeClass('sidenav-active');
+                    }
+
+                    if (!$('a[href="#19"]').hasClass('sidenav-active')) {
+                        $('a[href="#19"]').addClass('sidenav-active');
+                    }
+                    if ($('a[href="#20"]').hasClass('sidenav-active')) {
+                        $('a[href="#20"]').removeClass('sidenav-active');
+                    }
+                } 
+            });
+        });
+
+    </script>
 </html>
