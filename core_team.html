@@ -21,7 +21,7 @@
         padding-left: 7vw; 
         position: sticky; 
         position: -webkit-sticky; 
-        top: 15vh; 
+        top: 13vh; 
         font-family: 'ProximaNova'; 
     }
     .sidenav-content {
@@ -93,16 +93,7 @@
             <a href="index.html" class="active">Home</a>
             <a href="schedule.html">Schedule</a>
             <a href="core_team.html">Core Team</a>
-            <div class="dropdown">
-                <button class="dropbtn">History
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="#">Karavaan 2017</a>
-                    <a href="#">Karavaan 2018</a>
-                    <a href="#">Karavaan 2019</a>
-                </div>
-            </div>
+            <a href="archive.html">Archive</a>
             <a href="previous_sponsors.html">Previous Sponsors</a>
             <a href="#about">About</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
@@ -132,6 +123,7 @@
                     <li class="nav-item"><a class="nav-link" href="#17">Pre-Karavaan</a></li>
                     <li class="nav-item"><a class="nav-link" href="#18">Accounts</a></li>
                     <li class="nav-item"><a class="nav-link" href="#19">Content Writing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#20">General Coordinators</a></li>
                 </ul>
             </div>
             <div class="vertical_box">
@@ -500,13 +492,6 @@
                             repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
                             accusamus id?</p>
                     </div>
-                    <div style="justify-content: center; flex-direction: row; padding: 5%;">
-                        <h2 style="text-align: center;">Bhavik</h2><br>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
-                            rem
-                            repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
-                            accusamus id?</p>
-                    </div>
                 </div>
                 <br><br><br>
             
@@ -544,6 +529,45 @@
                     </div>
                 </div>
                 <br><br><br>
+
+
+                <h1 id="20" style="font-family: 'LemonMilk'; padding-left: 3%;">General Cooridnators</h1>
+                <hr>
+                <div class="vertical_box">
+                    <div class="horizontal_box">
+                        <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                            <h2 style="text-align: center;">Sanjana Vasanth</h2><br>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                                rem
+                                repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                                accusamus id?</p>
+                        </div>
+                        <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                            <h2 style="text-align: center;">Hrishikesh Jagtap</h2><br>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                                rem
+                                repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                                accusamus id?</p>
+                        </div>
+                    </div>
+                    <div class="horizontal_box">
+                        <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                            <h2 style="text-align: center;">Abhisek Narayan</h2><br>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                                rem
+                                repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                                accusamus id?</p>
+                        </div>
+                        <div style="justify-content: center; flex-direction: row; padding: 5%;">
+                            <h2 style="text-align: center;">Shalini Das</h2><br>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellendus, harum architecto
+                                rem
+                                repellat nam totam quod, eligendi praesentium nobis nihil doloribus provident incidunt odit magnam unde
+                                accusamus id?</p>
+                        </div>
+                    </div>
+                </div>
+                <br><br><br>
             </div>
         </div>
     </body>
@@ -572,6 +596,7 @@
                 var div_seventeen_top = $("#17").offset().top-200;
                 var div_eighteen_top = $("#18").offset().top-200;
                 var div_nineteen_top = $("#19").offset().top-200;
+                var div_twenty_top = $("#20").offset().top-200;
 
                 if (scroll_top > div_one_top && scroll_top < div_two_top) {
                     //Division 1
@@ -805,7 +830,7 @@
                         $('a[href="#19"]').removeClass('sidenav-active');
                     }
 
-                } else if (scroll_top > div_nineteen_top) {
+                } else if (scroll_top > div_nineteen_top && scroll_top < div_twenty_top) {
                     // You are in div 19
                     if ($('a[href="#18"]').hasClass('sidenav-active')) {
                         $('a[href="#18"]').removeClass('sidenav-active');
@@ -816,6 +841,15 @@
                     }
                     if ($('a[href="#20"]').hasClass('sidenav-active')) {
                         $('a[href="#20"]').removeClass('sidenav-active');
+                    }
+                } else if (scroll_top > div_twenty_top) {
+                    // You are in div 20
+
+                    if (!$('a[href="#20"]').hasClass('sidenav-active')) {
+                        $('a[href="#20"]').addClass('sidenav-active');
+                    }
+                    if ($('a[href="#19"]').hasClass('sidenav-active')) {
+                        $('a[href="#19"]').removeClass('sidenav-active');
                     }
                 } 
             });
