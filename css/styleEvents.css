@@ -17,6 +17,15 @@ body
 	
 }
 
+.heading
+{
+	width:100%;
+	text-align: center;
+	background: #8369D1;
+	height:15%;
+	color:white;
+}
+
 .container
 {
 	position: relative;
